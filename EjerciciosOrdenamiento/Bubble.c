@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void bubbleSort(int array[], int n) {
-    int a, b, intercambio;
-    for (a = 0; a < n - 1; a++) {
-        for (b = 0; b < n - a - 1; b++) {
-            if (array[b] > array[b + 1]) {
-                intercambio = array[b];  
-                array[b] = array[b + 1];
-                array[b + 1] = intercambio;
-            }
-        }
-    }
-}
 int main() {
     int array[5] = {2, 8, 254, 36, 12};
     int a;
@@ -31,7 +19,18 @@ printf("Array original:\n");
     system("pause");
     return 0;
 }
-
+void bubbleSort(int array[], int n) {
+    int a, b, intercambio;
+    for (a = 0; a < n - 1; a++) {
+        for (b = 0; b < n - a - 1; b++) {
+            if (array[b] > array[b + 1]) {
+                intercambio = array[b];  
+                array[b] = array[b + 1];
+                array[b + 1] = intercambio;
+            }
+        }
+    }
+}
 /*#include <stdio.h>
 #include <stdlib.h>
 

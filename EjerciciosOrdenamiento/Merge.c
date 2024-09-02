@@ -2,6 +2,23 @@
 #include <stdlib.h>
 #define TAMANO 5
 
+int main() {
+    int array[TAMANO] = {2, 8, 254, 36, 12};
+    
+    printf("Array original:\n");
+    for (int a = 0; a < TAMANO; a++) {
+        printf("%d ", array[a]);
+    }
+    mergeSort(array, 0, TAMANO - 1);
+
+    printf("Array ordenado:\n");
+    for (int a = 0; a < TAMANO; a++) {
+        printf("%d ", array[a]);
+    }
+
+    system("pause");
+        return 0;
+    }
 void fusionar(int array[], int inicio, int medio, int fin) {
     int tamanoIzquierda = medio - inicio + 1;
     int tamanoDerecha = fin - medio;
@@ -43,20 +60,3 @@ void mergeSort(int array[], int inicio, int fin) {
         fusionar(array, inicio, medio, fin);
     }
 }
-int main() {
-    int array[TAMANO] = {2, 8, 254, 36, 12};
-    
-    printf("Array original:\n");
-    for (int a = 0; a < TAMANO; a++) {
-        printf("%d ", array[a]);
-    }
-    mergeSort(array, 0, TAMANO - 1);
-
-    printf("Array ordenado:\n");
-    for (int a = 0; a < TAMANO; a++) {
-        printf("%d ", array[a]);
-    }
-
-    system("pause");
-        return 0;
-    }
