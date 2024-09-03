@@ -2,47 +2,47 @@
 #include <stdlib.h>
 
 int main() {
-    int arreglo[5] = {2, 8, 254, 36, 12};
+    int array[5] = {2, 8, 254, 36, 12};
     int i;
 
-    printf("Array original:\n");
+    printf("Original Array:\n");
     for (i = 0; i < 5; i++) {
-        printf("%d ", arreglo[i]);
+        printf("%d ", array[i]);
     }
 
-    QuickSort(arreglo, 0, 4);
+    quickSort(array, 0, 4);
 
-    printf("Array ordenado:\n");
+    printf("Sort Array:\n");
     for (i = 0; i < 5; i++) {
-        printf("%d ", arreglo[i]);
+        printf("%d ", array[i]);
     }
 
     system("pause");
     return 0;
 }
-int particion(int arreglo[], int bajo, int alto) {
-    int pivote = arreglo[alto];
-    int indice = (bajo - 1);
+int particion(int array[], int low, int high) {
+    int pivot = array[high];
+    int index = (low - 1);
 
-    for (int j = bajo; j < alto; j++) {
-        if (arreglo[j] <= pivote) {
-            indice++;
-            int temporal = arreglo[indice];
-            arreglo[indice] = arreglo[j];
-            arreglo[j] = temporal;
+    for (int j = low; j < high; j++) {
+        if (array[j] <= pivot) {
+            index++;
+            int temporary = array[index];
+            array[index] = array[j];
+            array[j] = temporary;
         }
     }
-    int temporal = arreglo[indice + 1];
-    arreglo[indice + 1] = arreglo[alto];
-    arreglo[alto] = temporal;
+    int temporary = array[index + 1];
+    array[index + 1] = array[high];
+    array[high] = temporary;
 
-    return (indice + 1);
+    return (index + 1);
 }
 
-void QuickSort(int arreglo[], int bajo, int alto) {
-    if (bajo < alto) {
-        int indicePivote = particion(arreglo, bajo, alto);
-        QuickSort(arreglo, bajo, indicePivote - 1);
-        QuickSort(arreglo, indicePivote + 1, alto);
+void quickSort(int array[], int low, int high) {
+    if (low < high) {
+        int indexpivot = particion(array, low, high);
+        quickSort(array, low, indexpivot - 1);
+        quickSort(array, indexpivot + 1, high);
     }
 }

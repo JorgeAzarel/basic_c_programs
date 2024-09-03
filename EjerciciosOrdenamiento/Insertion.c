@@ -5,14 +5,14 @@ int main() {
     int array[5] = {2, 8, 254, 36, 12};
     int a;
 
-    printf("Array original:\n");
+    printf("Original Array:\n");
     for (a = 0; a < 5; a++) {
         printf("%d ", array[a]);
     }
 
     insertionSort(array, 5);
 
-    printf("Array ordenado:\n");
+    printf("Sort Array:\n");
     for (a = 0; a < 5; a++) {
         printf("%d ", array[a]);
     }
