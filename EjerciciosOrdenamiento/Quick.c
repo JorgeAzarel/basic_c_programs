@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void quickSort(int array[], int low, int high);
+
 int main() {
     int array[5] = {2, 8, 254, 36, 12};
     int i;
@@ -11,7 +13,7 @@ int main() {
     }
 
     quickSort(array, 0, 4);
-
+    printf("\n");
     printf("Sort Array:\n");
     for (i = 0; i < 5; i++) {
         printf("%d ", array[i]);

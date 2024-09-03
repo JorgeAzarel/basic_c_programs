@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void bubbleSort(int array[], int n);
+
 int main() {
     int array[5] = {2, 8, 254, 36, 12};
     int a;
@@ -10,7 +12,7 @@ printf("Original Array:\n");
     }
  
     bubbleSort(array, 5);
-
+    printf("\n");
     printf("Sort Array:\n");
     for (a = 0; a < 5; a++) {
         printf("%d ", array[a]);

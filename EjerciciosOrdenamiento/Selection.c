@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void selectionSort(int array[], int n);
+
 int main() {
     int array[5] = {2, 8, 254, 36, 12};
     int index;
@@ -11,7 +13,7 @@ int main() {
     }
 
     selectionSort(array, 5);
-
+    printf("\n");
     printf("Sort Array:\n");
     for (index = 0; index < 5; index++) {
         printf("%d ", array[index]);

@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #deende SIZE 5
-
+void mergeSort(int array[], int start, int end);
+void merge(int array[], int start, int medium, int end);
 int main() {
     int array[SIZE] = {2, 8, 254, 36, 12};
     
@@ -10,7 +11,7 @@ int main() {
         printf("%d ", array[a]);
     }
     mergeSort(array, 0, SIZE - 1);
-
+    printf("\n");
     printf("Sort Array:\n");
     for (int a = 0; a < SIZE; a++) {
         printf("%d ", array[a]);
